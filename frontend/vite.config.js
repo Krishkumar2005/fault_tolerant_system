@@ -6,9 +6,9 @@ export default defineConfig({
   server: {
     port: 5173,
     proxy: {
-      '/events': 'http://localhost:3001',
-      '/aggregations': 'http://localhost:3001',
-      '/health': 'http://localhost:3001',
+      '/events': import.meta.VITE_API_BASE_URL || 'http://localhost:3001',
+      '/aggregations': import.meta.VITE_API_BASE_URL ||'http://localhost:3001',
+      '/health': import.meta.VITE_API_BASE_URL || 'http://localhost:3001',
     }
   }
 })
